@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,8 @@ Route::get('/', function () {
     return view('dashboard.index');
 });
 
-Route::get('/category', function () {
-    return view('category.category');
-});
+
+Route::get('/category',[CategoryController::class, 'category'])->name('category');
 
 Route::get('/transactions', function () {
     return view('transactions.transactions');

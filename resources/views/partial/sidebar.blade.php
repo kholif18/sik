@@ -10,7 +10,7 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link  {{ Request::is('category') ? '' : 'collapsed' }}" href="{{ url('/category') }}">
+            <a class="nav-link  {{ Request::is('category') ? '' : 'collapsed' }}" href="{{ route('category') }}">
                 <i class="bi bi-grid"></i>
                 <span>Category</span>
             </a>
