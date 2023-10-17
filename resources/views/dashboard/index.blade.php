@@ -93,7 +93,7 @@
           </div>
 
           <div class="card-body">
-            <h5 class="card-title">Grafik Keuangan Bulanan</h5>
+            <h5 class="card-title">Grafik Keuangan Bulanan Ini</h5>
 
             <!-- Line Chart -->
             <div id="reportsChart"></div>
@@ -171,7 +171,7 @@
                     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                     datasets: [{
                       label: 'Pemasukan',
-                      data: [65, 59, 80, 81, 56, 55, 40],
+                      data: [3500000, 4000000, 4300000, 5100000, 4900000, 4780000, 4080000],
                       backgroundColor: [
                         'rgba(75, 192, 192, 0.2)',
                       ],
@@ -181,7 +181,7 @@
                       borderWidth: 1
                     },{
                       label: 'Pengeluaran',
-                      data: [23, 45, 50, 30, 20, 25, 10],
+                      data: [1600000, 2450000, 3400000, 3000000, 2000000, 2500000, 1000000],
                       backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                       ],

@@ -33,6 +33,6 @@ Route::get('/profile', function () {
     return view('profile.profile');
 });
 
-Route::get('/settings', function () {
-    return view('settings');
+Route::get('/user', function () {
+    return view('user.user');
 });

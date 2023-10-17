@@ -40,9 +40,9 @@
         </li><!-- End Profile Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link {{ Request::is('settings') ? '' : 'collapsed' }}" href="{{ url('/settings') }}">
-                <i class="bi bi-gear"></i>
-                <span>Settings</span>
+            <a class="nav-link {{ Request::is('user') ? '' : 'collapsed' }}" href="{{ url('/user') }}">
+                <i class="bi bi-people"></i>
+                <span>User</span>
             </a>
         </li><!-- End Profile Page Nav -->
 

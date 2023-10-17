@@ -27,15 +27,15 @@
                     <input type="date" class="form-control" id="intilDate">
                 </div>
                 <div class="col-4">
-                    <label for="type" class="form-label">Category</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <label for="category" class="form-label">Category</label>
+                    <select id="category" class="form-select" aria-label="Default select example">
                         <option value="1">All Categories</option>
                         <option value="2">Transportation</option>
                         <option value="3">Sallary</option>
                     </select>
                 </div>
-                <div class="col-sm-10">
-                    <button type="button" class="btn btn-success btn-sm">Apply</button>
+                <div class="text-center">
+                    <button type="button" class="btn btn-block btn-primary">Apply</button>
                 </div>
             </form>
         </div>
@@ -63,11 +63,11 @@
                 </tbody>
             </table>
             <br>
-            <button type="button" class="btn btn-sm btn-outline-primary" onclick="exportToPDF()"><i
+            {{-- <button type="button" class="btn btn-sm btn-outline-primary" onclick="exportToPDF()"><i
                     class="bi bi-file-pdf"></i> Save as pdf</button>
             <button type="button" class="btn btn-sm btn-outline-primary" onclick="exportToCSV()"><i
-                    class="bi bi-file-text"></i> Save as csv</button>
-            <button type="button" class="btn btn-sm btn-outline-primary" onclick="printTable()"><i
+                    class="bi bi-file-text"></i> Save as csv</button> --}}
+            <button type="button" class="btn btn-sm btn-outline-primary" onclick="printDataTable()"><i
                     class="bi bi-printer"></i> Print</button>
             <!-- Default Table -->
             <table class="table" id="report-table">
@@ -133,49 +133,13 @@
 @push('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script>
-        function exportToCSV() {
-            var csvContent = '';
-            var table = document.getElementById('report-table'); // Gantikan dengan ID tabel Anda
-            var rows = table.querySelectorAll('tr');
+        $(document).ready( function () {
+            $('#report-table').DataTable();
+        } );
 
-            for (var i = 0; i < rows.length; i++) {
-                var cells = rows[i].querySelectorAll('td, th');
-                for (var j = 0; j < script cells.length; j++) {
-                    csvContent += cells[j].textContent + ',';
-                }
-                csvContent += '\n';
-            }
-
-            var blob = new Blob([csvContent], {
-                type: 'text/csv'
-            });
-            var link = document.createElement('a');
-            link.href = window.URL.createObjectURL(blob);
-            link.download = 'report.csv';
-            link.click();
-        }
-
-        function exportToPDF() {
-            var doc = new jsPDF();
-            var table = document.getElementById('report-table'); // Gantikan dengan ID tabel Anda
-            var tableHTML = table.outerHTML;
-            doc.fromHTML(tableHTML, 15, 15);
-            doc.save('report.pdf');
-        }
-
-        function printTable() {
-            var table = document.getElementById('report-table'); // Gantikan dengan ID tabel Anda
-            var newWin = window.open('', '_blank');
-            newWin.document.write('<html><body>');
-            newWin.document.write(
-                '<style>@media print {table {width: 100%; border-collapse: collapse; margin-bottom: 1em;} th, td {padding: 0.5em; border-bottom: 1px solid #ddd;} }</style>'
-            );
-            newWin.document.write(table.outerHTML);
-            newWin.document.write('</body></html>');
-            newWin.print();
-            newWin.onafterprint = function() {
-                newWin.close();
-            }
-        }
-    </script>
+        function printDataTable() {
+        var table = $('#report-table').DataTable();
+        table.button('.buttons-print').trigger();
+    }
+    </script>    
 @endpush
