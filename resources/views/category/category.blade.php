@@ -27,9 +27,9 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th style="width: 5%;" scope="col">No</th>
-                        <th style="width: 85%;" scope="col">Cateory</th>
-                        <th style="width: 10%; text-align: center;" scope="col">Option</th>
+                        <th style="width: 7%;" scope="col">No</th>
+                        <th style="width: 77%;" scope="col">Cateory</th>
+                        <th style="width: 15%; text-align: center;" scope="col">Option</th>
                     </tr>
                 </thead>
                 <tbody>
