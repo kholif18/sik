@@ -28,6 +28,9 @@
     <link href="{{ asset('template/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
     <link href="{{ asset('template/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
+    <!-- Toastr -->
+    <link rel="stylesheet" href="{{ asset('template/assets/vendor/toastr/toastr.min.css') }}">
+
     <!-- Template Main CSS File -->
     <link href="{{ asset('template/assets/css/style.css') }}" rel="stylesheet">
 
@@ -45,12 +48,12 @@
             <nav>
                 <ol class="breadcrumb">
                     @section('breadcrumb')
-                    <li class="breadcrumb-item">
-                        <a href="{{ url('/') }}"><i class="fa fa-dashboard"></i>
-                            Home
-                        </a>
-                    </li>
-                @show
+                        <li class="breadcrumb-item">
+                            <a href="{{ url('/') }}"><i class="fa fa-dashboard"></i>
+                                Home
+                            </a>
+                        </li>
+                    @show
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -81,6 +84,9 @@
     <script src="{{ asset('template/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
     <script src="{{ asset('template/assets/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('template/assets/vendor/php-email-form/validate.js') }}"></script>
+
+    <!-- Toastr -->
+    <script src="{{ asset('template/assets/vendor/toastr/toastr.min.js') }}"></script>
 
     <!-- Template Main JS File -->
     <script src="{{ asset('template/assets/js/main.js') }}"></script>

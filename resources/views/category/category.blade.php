@@ -28,7 +28,7 @@
                 <thead>
                     <tr>
                         <th style="width: 7%;" scope="col">No</th>
-                        <th style="width: 77%;" scope="col">Cateory</th>
+                        <th style="width: 77%;" scope="col">Category</th>
                         <th style="width: 15%; text-align: center;" scope="col">Option</th>
                     </tr>
                 </thead>
