@@ -19,7 +19,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/category',[CategoryController::class, 'category'])->name('category');
+Route::get('/category',[CategoryController::class, 'index'])->name('category');
+
+Route::get('/category/{category}', [CategoryController::class, 'show'])->name('category-show');
+Route::post('/category', [CategoryController::class, 'store'])->name('category-store');
+Route::put('/category/{category}', [CategoryController::class, 'edit'])->name('category-edit');
+Route::delete('/category/{category}', [CategoryController::class, 'destroy'])->name('category-delete');
 
 Route::get('/transactions', function () {
     return view('transactions.transactions');

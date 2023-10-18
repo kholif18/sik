@@ -33,46 +33,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $no = 1;
+                    @endphp
+                    @foreach ($categories as $category)
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Designer</td>
+                        <th scope="row">{{ $no++ }}</th>
+                        <td>{{ $category->name }}</td>
                         <td style="text-align: center;">
                             <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
                             <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                         </td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Developer</td>
-                        <td style="text-align: center;">
-                            <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Finance</td>
-                        <td style="text-align: center;">
-                            <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>HR</td>
-                        <td style="text-align: center;">
-                            <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Dynamic Division Officer</td>
-                        <td style="text-align: center;">
-                            <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
             <!-- End Default Table Example -->

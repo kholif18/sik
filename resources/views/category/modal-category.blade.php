@@ -8,9 +8,9 @@
             <div class="modal-body">
                 <form>
                     <div class="row mb-3">
-                        <label for="inputText" class="col-sm-2 col-form-label">Category</label>
+                        <label for="name" class="col-sm-2 col-form-label">Category</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control">
+                            <input type="text" name="name" class="form-control" required>
                         </div>
                     </div>
                 </form>
