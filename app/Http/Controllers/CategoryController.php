@@ -31,7 +31,7 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): JsonResponse
+    public function store(Request $request)
     {
         $name = $request->input('name');
 
@@ -39,10 +39,11 @@ class CategoryController extends Controller
         $category->name = $name;
         $category->save();
 
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Data kategori berhasil disimpan.'
-        ]);
+        return redirect('category');
+        // return response()->json([
+        //     'status' => 'success',
+        //     'message' => 'Data kategori berhasil disimpan.'
+        // ]);
     }
 
     /**
@@ -65,9 +66,16 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Category $category)
+    public function edit(Request $request, $id)
     {
-        //
+        $name = $request->input('name');
+
+        $id->name = $name;
+        $id->save();
+
+        return redirect('category');
+        // $category = Category::find($category);
+        // return view('category.edit', compact(['category']));
     }
 
     /**

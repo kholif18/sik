@@ -85,6 +85,9 @@
     <script src="{{ asset('template/assets/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('template/assets/vendor/php-email-form/validate.js') }}"></script>
 
+    <!-- jQuery -->
+    <script src="{{ asset('template/assets/vendor/jquery/jquery.min.js') }}"></script>
+
     <!-- Toastr -->
     <script src="{{ asset('template/assets/vendor/toastr/toastr.min.js') }}"></script>
 

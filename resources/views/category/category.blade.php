@@ -16,9 +16,11 @@
 @section('content')
     <div class="card">
         <div class="filter" style="padding-right: 20px">
-            <button type="button" class="btn btn-primary btn-sm add-category" data-url="{{ route('category-store') }}">
+            <button type="button" class="btn btn-success btn-sm add-category" data-bs-toggle="modal"
+            data-bs-target="#modal-category">
                 <i class="bi bi-plus"></i> Add Category
             </button>
+            <a href="{{ route('create-category') }}" class="btn btn-primary btn-sm"><i class="bi bi-plus"></i> Add Category</a>
         </div>
         <div class="card-body">
             <h5 class="card-title col-10">Category</h5>
@@ -40,7 +42,9 @@
                             <th scope="row">{{ $no++ }}</th>
                             <td>{{ $category->name }}</td>
                             <td style="text-align: center;">
-                                <button type="button" class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+                                {{-- <a href="{{ route('category-edit', ['category' => $category->id]) }}"class="btn btn-primary"><i class="bi bi-pencil-square"></i></a> --}}
+                                <button type="button" class="btn btn-primary"><i class="bi bi-pencil-square" data-bs-toggle="modal"
+                                    data-bs-target="#edit-{{ $category->id }}"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
@@ -51,11 +55,9 @@
         </div>
     </div>
 
-    {{-- @includeIf('category.modal-category') --}}
+    @includeIf('category.modal-category')
 @endsection
 
-
-{{-- 
 @push('scripts')
     <script>
         // function addCategory() {
@@ -63,12 +65,12 @@
         //     $('#modal-category .modal-title').text('Add Category')
         // }
         $(document).ready(function() {
-            $(document).on('click', '.add-category', function(event) {
-                event.preventDefault();
-                $('#basicModal').modal('show');
+            $(document).ready(function() {
+                $(document).on('click', '.add-category', function(event) {
+                    event.preventDefault();
+                    $('#modal-category').modal('show');
+                });
             });
-        });
-        // $(document).ready(function() {
         //     // Handle ketika user meng-klik tombol "Add Category"
         //     $(document).on('click', '.add-category', function(event) {
         //         event.preventDefault();
@@ -85,6 +87,6 @@
         //         // Show modal form
         //         $('#add-category').modal('show');
         //     });
-        // });
+        });
     </script>
-@endpush --}}
+@endpush

@@ -1,7 +1,7 @@
 @extends('partial.master')
 
 @section('title')
-    Add Category
+    Edit Category
 @endsection
 
 @section('breadcrumb')
@@ -13,7 +13,7 @@
     </li>
     <li class="breadcrumb-item active">
         <a href="{{ url()->current() }}">
-            Add Category
+            Edit Category
         </a>
     </li>
 @endsection
@@ -21,7 +21,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title col-10">Add Category</h5>
+            <h5 class="card-title col-10">Edit Category</h5>
             <div class="row">
                 <div class="col-5">
                     <form action="{{ route('category-store') }}" method="POST">
@@ -29,7 +29,7 @@
                         <div class="row mb-3">
                             <label for="name" class="col-sm-4 col-form-label">Category</label>
                             <div class="col-sm-8">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Category" required>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Category" value="{{ $category->name }}" required>
                             </div>
                         </div>
                         <a href="{{ route('category') }}" class="btn btn-secondary btn-sm"> Close</a>
